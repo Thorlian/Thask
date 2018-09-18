@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+:root {
+	font-family: 'Roboto Mono', serif;
+	font-size: 18px;
+	background-color: #fbfbfb;
+	font-weight: 400;
+	color: grey;
+
+
+	--buttonColor: #eeeeee;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+
+
+
+html {
+  box-sizing: border-box;
+	height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+}
+p {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+h1 {
+
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin: 0;
+	display: inline-block;
+
+}
+h2 {
+	display: inline-block;
+	font-size: 1.4rem;
+	text-align: left;
+	margin: 0;
+	font-weight: 600;
+}
+i {
+	display: inline-block;
+	vertical-align:middle;
+}
+
+.button:focus {
+	outline:0;
+
+}
+.button:hover {
+	outline:0;
+	color: black;
+}
+
+.button {
+	z-index: 10;
+	width: 1.3rem;
+	height: 1.3rem;
+	border-radius: 50%;
+ 	cursor: pointer;
+	background-color: var(--buttonColor);
+	text-align: center;
+	border: none;
+	color: grey;
+	font-size: 1rem;
+	padding: 0;
+}
+
+.cards {
+	transition:all 250ms ease;
+	width: 100%;
+}
+
+.card {
+	display: block;
+	box-shadow: 0 .01rem .3rem rgba(0,0,0,0.12), 0 .01rem .2rem rgba(0,0,0,0.24);
+	background-color: white;
+	margin: 1.5rem 0.8rem;
+	z-index: 2;
+	width: 14rem;
+	transition:all 250ms ease;
+	transition:box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card:hover {
+	box-shadow: 0 0.14rem .8rem rgba(0,0,0,0.25), 0 .1rem .5rem rgba(0,0,0,0.22);
+}
+
+
+
+.thaskHeader {
+	background-color: white;
+	height: 1.5rem;
+	padding-left: .2rem;
+	max-height: 4rem;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	cursor: pointer;
+}
+
+.thaskDescription{
+	display: block;
+	background-color: white;
+	padding: 0.2rem;
+	min-height: 4rem;
+	max-height: 18rem;
+	overflow-wrap: break-word;
+	overflow-x: hidden;
+	overflow-y: auto;
+	cursor: pointer;
+
+}
+
+.thaskFooter {
+	margin-top: .2rem;
+	display: flex;
+	width: 100%;
+	height: auto;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.timerBox {
+	position: relative;
+	width: 100%;
+	height: 2rem;
+}
+
+.timeCounterWithGoal{
+	float: left;
+	margin-left: 0.2rem;
+}
+
+.timerCounter {
+	position: absolute;
+	top: 0.2rem;
+	left: 0;
+	z-index: 15;
+	margin-left: 0.2rem;
+}
+
+.timerGoal{
+	position: absolute;
+	top: 0.1rem;
+	right: 0;
+	margin-right: 0.2rem;
+	z-index: 15;
+}
+
+
+.timerBar{
+	z-index: 20;
+	width: 100%;
+	height: 1.5rem;
+	margin: 0;
+
+	border-bottom: 0.15rem solid lightgrey;
+	border-top: 0.15rem solid lightgrey;
+}
+
+.timerProgress{
+	z-index: 10;
+	background-color: #74c3cd;
+	position: absolute;
+	top: .13rem;
+	left: 0;
+	height: 1.24rem;
+	width: 0%;
+}
+
+.thaskButtons {
+	display: flex;
+	justify-content: center;
+	visibility: hidden;
+  opacity: 0;
+	padding: .2rem 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.thaskButton {
+	width: 1.3rem;
+	height: 1.3rem;
+	margin: 0.2rem 0.5rem;
+	transition-duration: 0.4s;
+	background-color: white;
+}
+
+
+.thaskElement:hover .thaskButtons {
+	visibility: visible;
+	opacity: 1;
+}
+
+.floatyButton {
+	z-index: 20;
+	box-shadow: 0 .1rem .3rem rgba(0,0,0,0.12), 0 .1rem .2rem rgba(0,0,0,0.24);
+	font-size: 0.7rem;
+	font-weight: 800;
+	width: 3rem;
+	height: 3rem;
+	position: fixed;
+	bottom: 1.5rem;
+  right: 1rem;
+	background-color: #00838f;
+	color: white;
+	transition:box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.floatyButton:hover{
+	box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.25), 0 .2rem .5rem rgba(0,0,0,0.3);
+	color: white;
+}
+
+.creatorHeadButton {
+	width: 1.6rem;
+	height: 1.6rem;
+	flex-shrink: 0;
+	padding: 0;
+}
+
+.sideBarButton {
+	color: white;
+	background-color: inherit;
+	width:auto;
+	margin: 1rem 0;
+}
+.sideBarButton:hover {
+	color: white;
+	text-shadow: 0 0 .1rem white, 0 0 1.5rem white, 0 0 1rem white;
+
+}
+
+.sideBarButton > .material-icons {
+	font-size: 2rem;
+
+}
+
+
+#creatorTitle {
+	width: 100%;
+	height: 100%;
+	margin-right: 1rem;
+	overflow: auto;
+}
+
+#creatorUp {
+
+}
+
+#pageContainer {
+	display:  flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: row;
+}
+
+#contentContainer {
+	display:  flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: row;
+
+}
+
+#sideBar {
+	max-width: 3rem;
+	z-index: 20;
+	display: flex;
+	padding: 0.5rem .5rem;
+	flex-shrink: 0;
+	flex-direction:column;
+	background-color: #00838f;
+	box-shadow: 0.1rem .1rem .1rem rgba(0,0,0,0.12), 0.1rem .1rem .2rem rgba(0,0,0,0.24);
+}
+
+
+
+#thaskContainer {
+height: 100%;
+padding: 0;
+}
+
+#thaskWrapper {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+#thaskCreator{
+	display: flex;
+	flex-direction: column;
+	min-width: 20rem;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/*padding: 1rem 1.5rem;*/
+	background-color: white;
+	box-shadow: 0.1rem .1rem .1rem rgba(0,0,0,0.12), 0.1rem .1rem .2rem rgba(0,0,0,0.24);
+	overflow: auto;
+}
+
+#thaskCreator:after {
+  width: inherit;
+}
+
+#creatorHeader {
+	display: flex;
+	width: 100%;
+	z-index: 10;
+	padding: 1rem 1.5rem .5rem;
+ 	position: sticky;
+ 	top: 0;
+	background-color: white;
+	box-shadow: 0 .1rem .5rem rgba(0,0,0,0.12), 0 .1rem .5rem rgba(0,0,0,0.24);
+	flex-shrink: 0;
+	margin-bottom: 0.3rem;
+}
+
+#creatorField {
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem 1.5rem;
+	overflow: auto;
+	flex-shrink: 10;
+}
+
+#creatorFooter {
+	height: auto;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: 0.3rem;
+	flex-shrink: 0;
+	z-index: 10;
+	width: 100%;
+	padding: 0.5rem 1.5rem;
+	position: sticky;
+  bottom: 0;
+  left: 0;
+	background-color: white;
+	box-shadow: 0 -.05rem .5rem rgba(0,0,0,0.12), 0 -.05rem .5rem rgba(0,0,0,0.24);
+}
+
+#creatorTimer{
+	position: relative;
+	width: 100%;
+	height: 2rem;
+}
+
+#creatorGoalTime{
+	min-width: 3rem;
+	padding: 0 .2rem;
+	height: 1.3rem;
+
+	border-right: .15rem solid lightgrey;
+	border-left: .15rem solid lightgrey;
+	border-radius: 20%;
+}
+
+#creatorGoalTime:focus{
+	outline: 0;
+}
+
+.creatorGoalDigit{
+	min-width	: 1.5rem;
+	height: auto;
+}
+
+#creatorGoalMinutes {
+	text-align: right;
+}
+#creatorGoalHours {
+	text-align: right;
+}
+
+
+#creatorButtons {
+	width: 100%;
+	text-align: right;
+}
+
+.creatorButton{
+	padding: 0;
+	height: auto;
+	width: auto;
+	background-color: inherit;
+	margin: 0.2rem 0.5rem;
+	transition-duration: 0.4s;
+}
+.creatorButton > .material-icons {
+	font-size: 2rem;
+}
+
+
+#creatorMenu {
+	width: 100%;
+	display: none;
+	overflow: hidden;
+	background-color: white;
+	transform: height 150ms;
+}
+
+.greyedOutButton{
+	color: #808899;
+}
+.greyedOutButton:hover{
+	cursor: default;
+	color: #808899;
+	text-shadow: none;
+}
+
+.editable:active,
+.editable:focus{
+outline:none;
+}
+
+.editor {
+	white-space: pre-wrap;
+}
+
+.archive_dialog {
+
+}
+
+.archive_dialog .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.archive_dialog .ui-dialog-titlebar{
+	outline: none;
+	font-family: 'Roboto Mono', serif;
+	background-color: #00838f;
+}
+
+.archive_dialog .ui-button:focus{
+  border: none;
+	outline: none;
+	color: darkgrey;
+}
+
+.archive_dialog .ui-button:hover{
+  border: none;
+	outline: none;
+}
+
+.archive_dialog .ui-button{
+  border: 0;
+	outline: none;
+}
